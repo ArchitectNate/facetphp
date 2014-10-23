@@ -1,0 +1,4 @@
+validator_password:
+	max_length: 20
+	min_length: 5
+	character_set: [a-zA-Z0-9-_$!@#%^&*?]
