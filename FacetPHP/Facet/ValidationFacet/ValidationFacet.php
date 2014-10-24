@@ -1,6 +1,6 @@
 <?php
 
-namespace FacetPHP\Facet;
+namespace FacetPHP\Facet\ValidationFacet;
 
 use FacetPHP\Core\Facet;
 use FacetPHP\Core\FacetInterface;

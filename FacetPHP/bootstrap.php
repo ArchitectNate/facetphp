@@ -33,21 +33,5 @@ spl_autoload_register(function ($thirdPartyClass)
 	}
 });
 
-/**
- * General Facets
- */
-spl_autoload_register(function ($facetClass) 
-{
-	$separatedClassPath = explode("\\", $facetClass);
-	$separatedClassPath[] = end($separatedClassPath);
-	$fullClassPath = implode("/", $separatedClassPath);
-		
-	if(file_exists($fullClassPath . '.php'))
-	{
-		require_once($fullClassPath . '.php');
-		return;
-	}
-});
-
 \FacetPHP\Core\Facet::_init();
 ?>
