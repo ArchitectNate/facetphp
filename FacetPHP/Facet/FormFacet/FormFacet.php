@@ -3,8 +3,12 @@
 namespace FacetPHP\Facet\FormFacet;
 
 use FacetPHP\Core\Facet;
-user FacetPHP\Core\FacetInterface
+use FacetPHP\Core\FacetInterface;
 
 class FormFacet extends Facet implements FacetInterface
 {
+	public function _initFacet()
+	{
+	
+	}
 }

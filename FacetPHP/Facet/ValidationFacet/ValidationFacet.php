@@ -10,7 +10,7 @@ class ValidationFacet extends Facet implements FacetInterface
 	
 	public function _initFacet()
 	{
-		echo "TEST";
+		//echo "TEST";
 	}
 	
 	public function validateEmail($email)

@@ -1,12 +1,9 @@
 <?php
-// Absolute webroot path
-define('FACETPHP_WEBROOT', 'C:/xampp/htdocs/');
-
-// Paths relative to webroot
-define('FACETPHP_INSTALL', 'facet_fw/');
-define('FACETPHP_CORE', FACETPHP_INSTALL . 'FacetPHP/Core/');
-define('FACETPHP_BIT', FACETPHP_INSTALL . 'FacetPHP/Bit/');
-define('FACETPHP_FACET', FACETPHP_INSTALL . 'FacetPHP/Facet/');
+// Path relative to the webroot
+define('FACETPHP_INSTALL', $_SERVER['DOCUMENT_ROOT'] . '/facet_fw/facetphp');
+define('FACETPHP_CORE', FACETPHP_INSTALL . '/FacetPHP/Core');
+define('FACETPHP_BIT', FACETPHP_INSTALL . '/FacetPHP/Bit');
+define('FACETPHP_FACET', FACETPHP_INSTALL . '/FacetPHP/Facet');
 
 
 /**
@@ -14,8 +11,8 @@ define('FACETPHP_FACET', FACETPHP_INSTALL . 'FacetPHP/Facet/');
  */
 spl_autoload_register(function ($coreClass)
 {
-	$fullClassPath = FACETPHP_WEBROOT . FACETPHP_INSTALL . str_replace("\\", "/", $coreClass);	
-	
+	$fullClassPath = FACETPHP_INSTALL . "/" . str_replace("\\", "/", $coreClass);	
+
 	if(file_exists($fullClassPath . '.php'))
 	{
 		require_once($fullClassPath . '.php');
@@ -28,7 +25,7 @@ spl_autoload_register(function ($coreClass)
  */
 spl_autoload_register(function ($thirdPartyClass)
 {
-	foreach (glob(FACETPHP_WEBROOT .  FACETPHP_CORE . "third-party/*/" . $thirdPartyClass . ".php") as $filename) {
+	foreach (glob(FACETPHP_CORE . "/third-party/*/" . $thirdPartyClass . ".php") as $filename) {
 		require_once($filename);
 	}
 });

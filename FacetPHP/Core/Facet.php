@@ -97,7 +97,7 @@ abstract class Facet {
 	 */
 	private static function _loadCoreConfig()
 	{
-		return new Config(FACETPHP_WEBROOT . FACETPHP_CORE . 'config.yml');
+		return new Config(FACETPHP_CORE . '/config.yml');
 	}
 	
 	/**
@@ -106,7 +106,7 @@ abstract class Facet {
 	 private static function _generateFacetList()
 	 {
 		$facetList = array();
-		foreach (glob("{FACETPHP_FACET}/*Facet", GLOB_ONLYDIR) as $filename) {
+		foreach (glob(FACETPHP_FACET . "/*Facet", GLOB_ONLYDIR) as $filename) {
 			$facetList[] = basename($filename);
 		}
 		return $facetList;
